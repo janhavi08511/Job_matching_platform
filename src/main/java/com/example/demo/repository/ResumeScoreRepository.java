@@ -1,4 +1,12 @@
 package com.example.demo.repository;
 
-public class ResumeScoreRepository {
+import com.example.demo.entity.ResumeScoreEntity;
+import com.example.demo.entity.UserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ResumeScoreRepository extends JpaRepository<ResumeScoreEntity, Long> {
+
+    ResumeScoreEntity findByUserId(Long userId);
+
+    ResumeScoreEntity findByUser(UserEntity user);
 }
